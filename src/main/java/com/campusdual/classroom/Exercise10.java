@@ -9,7 +9,16 @@ public class Exercise10 {
     // El mensaje a imprimir es → La bola es de color: COLOR_BOLA
     // COLOR_BOLA puede ser → rojo, azul, verde
     public static void main(String[] args) {
+        int contador=0;
+        String bola="";
 
+        while (contador<2) {
+            bola = getBall();
+            System.out.println("La bola es de color: " + bola);
+            if (bola.equals("azul")) {
+                contador++;
+            }
+        }
     }
 
     //TODO ↓
@@ -20,7 +29,19 @@ public class Exercise10 {
     // 2 → azul
     // 3 → verde
     public static String getBall() {
-        return null;
+        //El método getBall() devuelve un String al ser invocado. El String podrá ser "verde",
+        // "azul" o "rojo". Dentro del método, utilizando un switch, se llamará al método randomWithRange()
+        //  y según el valor numérico que devuelva éste, el switch devolverá un color u otro.
+        int random = randomWithRange(1,4);
+        switch (random) {
+            case 1:
+                return "rojo";
+            case 2:
+                return "azul";
+            case 3:
+                return "verde";
+        }
+        return "";
     }
 
     public static int randomWithRange(int min, int max) {
